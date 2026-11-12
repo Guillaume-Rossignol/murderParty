@@ -15,12 +15,12 @@ if (is.null(actions) | is.null(path_server)) {
 # Infos scénario
 
 message_PA_insuffisant <- "Points de pouvoir insuffisants"
+values <- reactiveValues(enquete_speciale="Non",classement="non",
+                         actions=actions,start=TRUE,id_chatgpt=id_chatgpt)
 
 shinyServer(function(input, output,session) {
 
   USER <- reactiveValues(logged = FALSE)
-  values <- reactiveValues(enquete_speciale="Non",classement="non",
-                           actions=actions,start=TRUE,id_chatgpt=id_chatgpt)
 
   observeEvent(values$actions,{
     write_csv(values$actions,path_server)
