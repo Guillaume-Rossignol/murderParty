@@ -559,7 +559,7 @@ shinyServer(function(input, output,session) {
 
     new_rows <- tibble(
       user="admin",action="timer",cible="",PA=NA,
-      timer=Sys.time(),"",timer_ok=Sys.time(),texte="")
+      timer=Sys.time(),resultat="",timer_ok=Sys.time(),texte="")
 
     values$actions <- values$actions %>% add_row(new_rows)
 
